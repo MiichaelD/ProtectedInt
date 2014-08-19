@@ -7,7 +7,7 @@ package ProtectedInt;
  * value from 2 random numbers.
  * 
  * NOTE: this class should be SETUP only once */
-public class ProtectedInt{
+public class ProtectedInt implements Comparable<Object>{
 
 	private static int leftSecret=-1, rightSecret=-1;
 	
@@ -111,5 +111,14 @@ public class ProtectedInt{
 	 * dividing stored value by param value.*/
 	public int module(int v){
 		return set(get()%v);
+	}
+
+	@Override
+	public int compareTo(Object arg0) {
+		if( arg0 instanceof Integer)
+			return get()-(int)arg0;
+		if( arg0 instanceof ProtectedInt)
+			return get()-((ProtectedInt)arg0).get();
+		throw new ClassCastException("ProtectedInt can only be compared to ints and ProtectedInt type");
 	}
 }
