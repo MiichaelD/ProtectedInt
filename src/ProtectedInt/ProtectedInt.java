@@ -77,31 +77,39 @@ public class ProtectedInt{
 		return set(get()-1);
 	}
 	
-	/** Add current value and param value
+	/** Add current value and param value and store it
 	 * @param v value to add.
 	 * @return the current value as int.*/
 	public int add(int v){
 		return set(get()+v);
 	}
 	
-	/** Subtract and param value to current value
+	/** Subtract and param value to current value and store it
 	 * @param v value to subtract.
 	 * @return the new value as int.*/
 	public int subtract(int v){
 		return set(get()-v);
 	}
 	
-	/** Multiply current value by param value
+	/** Multiply current value by param value and store it
 	 * @param v value to multiply.
 	 * @return the new value as int.*/
 	public int multiply(int v){
 		return set(get()*v);
 	}
 	
-	/** Divide current value by param value
+	/** Divide current value by param value and store it
 	 * @param v divisor.
 	 * @return the new value as int.*/
 	public int divide(int v){
 		return set(get()/v);
+	}
+	
+	/** Get residue from current value divided by param value and store it
+	 * @param v divisor.
+	 * @return the new value as int, which is the residue of
+	 * dividing stored value by param value.*/
+	public int module(int v){
+		return set(get()%v);
 	}
 }
