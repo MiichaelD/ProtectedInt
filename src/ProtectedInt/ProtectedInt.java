@@ -22,10 +22,21 @@ public class ProtectedInt implements Comparable<Object>{
 		//System.out.println("starting value ="+get());
 	}
 	
-	/** Create a new ProtectedInt with given value*/
+	/** Create a new ProtectedInt with given int value*/
 	public ProtectedInt(int v){
 		set(v);
 	}
+	
+	/** Create a new ProtectedInt with given String value*/
+	public ProtectedInt(String v){
+		try{
+			set(Integer.parseInt(v));
+		}catch(NumberFormatException e){
+			left = right = 0;
+		}
+	}
+	
+	
 	
 	/** Setup only once to prevent data loss*/
 	public static void setup(){
