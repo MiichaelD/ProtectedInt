@@ -17,8 +17,7 @@ public class ProtectedInt implements Comparable<Object>{
 	
 	/** Create a new PRotectedInt with 0 value*/
 	public ProtectedInt(){
-		left = 0;
-		right =0;
+		set(0);
 		//System.out.println("starting value ="+get());
 	}
 	
@@ -131,5 +130,48 @@ public class ProtectedInt implements Comparable<Object>{
 		if( arg0 instanceof ProtectedInt)
 			return get()-((ProtectedInt)arg0).get();
 		throw new ClassCastException("ProtectedInt can only be compared to ints and ProtectedInt type");
+	}
+	
+	
+	/** Set new value from given ProtectedInt
+	 * @return the current value as int*/
+	public int set(ProtectedInt v){
+		return set(v.get());
+	}
+	
+	/** Add current value and param value and store it
+	 * @param v value to add.
+	 * @return the current value as int.*/
+	public int add(ProtectedInt v){
+		return add(v.get());
+	}
+	
+	/** Subtract and param value to current value and store it
+	 * @param v value to subtract.
+	 * @return the new value as int.*/
+	public int subtract(ProtectedInt v){
+		return subtract(v.get());
+	}
+	
+	/** Multiply current value by param value and store it
+	 * @param v value to multiply.
+	 * @return the new value as int.*/
+	public int multiply(ProtectedInt v){
+		return multiply(v.get());
+	}
+	
+	/** Divide current value by param value and store it
+	 * @param v divisor.
+	 * @return the new value as int.*/
+	public int divide(ProtectedInt v){
+		return divide(v.get());
+	}
+	
+	/** Get residue from current value divided by param value and store it
+	 * @param v divisor.
+	 * @return the new value as int, which is the residue of
+	 * dividing stored value by param value.*/
+	public int module(ProtectedInt v){
+		return module(v.get());
 	}
 }
